@@ -15,145 +15,142 @@ const Input = styled.input`
 const InputContainer = styled.div`
   margin-bottom: 5px;
   padding: 5px;
-  // max-width: 500px;
 `;
 
-const elmValObj = {};
-
-const NameGroup = ({ handleChanges }) => {
+const NameGroup = ({ handleChanges, elmInfo }) => {
   return (
     <InputContainer>
       <Input
         onChange={handleChanges}
         type="text"
         placeholder="first name"
-        value=""
+        value={elmInfo.firstname}
         name="firstname"
       />
       <Input
         onChange={handleChanges}
         type="text"
         placeholder="middle name"
-        value=""
+        value={elmInfo.middlename}
         name="middlename"
       />
       <Input
         onChange={handleChanges}
         type="text"
         placeholder="last name"
-        value=""
+        value={elmInfo.lastname}
         name="lastname"
       />
     </InputContainer>
   );
 };
 
-const AddressGroup = ({ handleChanges }) => {
+const AddressGroup = ({ handleChanges, elmInfo }) => {
   return (
     <InputContainer>
       <Input
         onChange={handleChanges}
         type="text"
         placeholder="address 1"
-        value=""
+        value={elmInfo.address1}
         name="address1"
       />
       <Input
         onChange={handleChanges}
         type="text"
         placeholder="address 2"
-        value=""
+        value={elmInfo.address2}
         name="address2"
       />
       <Input
         onChange={handleChanges}
         type="text"
         placeholder="address 3"
-        value=""
+        value={elmInfo.address3}
         name="address3"
       />
     </InputContainer>
   );
 };
 
-const StateGroup = ({ handleChanges }) => {
+const StateGroup = ({ handleChanges, elmInfo }) => {
   return (
     <InputContainer>
       <Input
         onChange={handleChanges}
         type="text"
         placeholder="city"
-        value=""
+        value={elmInfo.city}
         name="city"
       />
       <Input
         onChange={handleChanges}
         type="text"
         placeholder="state"
-        value=""
+        value={elmInfo.state}
         name="state"
       />
       <Input
         onChange={handleChanges}
         type="number"
         placeholder="zip"
-        value=""
+        value={elmInfo.zip}
         namce="zip"
       />
     </InputContainer>
   );
 };
 
-const PhoneGroup = ({ handleChanges }) => {
+const PhoneGroup = ({ handleChanges, elmInfo }) => {
   return (
     <InputContainer>
       <Input
         onChange={handleChanges}
         type="number"
         placeholder="mobile phone"
-        value=""
+        value={elmInfo.mobilephone}
         name="mobilephone"
       />
       <Input
         onChange={handleChanges}
         type="number"
         placeholder="home phone"
-        value=""
+        value={elmInfo.homephone}
         name="homephone"
       />
       <Input
         onChange={handleChanges}
         type="number"
         placeholder="other phone"
-        value=""
+        value={elmInfo.otherphone}
         name="otherphone"
       />
     </InputContainer>
   );
 };
 
-const EmailGroup = ({ handleChanges }) => {
+const EmailGroup = ({ handleChanges, elmInfo }) => {
   return (
     <InputContainer>
       <Input
         onChange={handleChanges}
         type="email"
         placeholder="email"
-        value=""
+        value={elmInfo.email1}
         name="email1"
       />
       <Input
         onChange={handleChanges}
         type="email"
         placeholder="alternate email"
-        value=""
+        value={elmInfo.email2}
         name="email2"
       />
     </InputContainer>
   );
 };
 
-const Submit = ({ handleChanges }) => {
+const Submit = ({ handleChanges, elmInfo }) => {
   return (
     <InputContainer>
       <button type="submit" name="submit">

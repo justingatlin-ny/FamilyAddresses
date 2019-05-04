@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
 import {
   NameGroup,
@@ -18,30 +18,30 @@ class Form extends PureComponent {
   state = {};
 
   handleSubmit = event => {
-    const form = event.srcElement;
+    event.preventDefault();
+    const form = event.target;
     const elmsList = form.elements;
+    console.log(typeof elmsList);
     if (elmsList && elmsList.length) {
-      elmsList.forEach((elm, idx) => {
-        console.log(elm.name, elm.value);
+      Object.values(elmsList).forEach((elm, idx) => {
+        console.log(elm.value);
       });
     }
   };
 
   handleChanges = event => {
     const elm = event.target;
-
     this.setState({ [elm.name]: elm.value });
-    console.log(elm.name, this.state[elm.name]);
   };
 
   render() {
     return (
-      <FormElm action="javascript: handleSubmit(this);">
-        <NameGroup handleChanges={this.handleChanges} />
-        <AddressGroup handleChanges={this.handleChanges} />
-        <StateGroup handleChanges={this.handleChanges} />
-        <EmailGroup handleChanges={this.handleChanges} />
-        <PhoneGroup handleChanges={this.handleChanges} />
+      <FormElm onSubmit={this.handleSubmit}>
+        <NameGroup handleChanges={this.handleChanges} elmInfo={this.state} />
+        <AddressGroup handleChanges={this.handleChanges} elmInfo={this.state} />
+        <StateGroup handleChanges={this.handleChanges} elmInfo={this.state} />
+        <EmailGroup handleChanges={this.handleChanges} elmInfo={this.state} />
+        <PhoneGroup handleChanges={this.handleChanges} elmInfo={this.state} />
         <Submit />
       </FormElm>
     );
