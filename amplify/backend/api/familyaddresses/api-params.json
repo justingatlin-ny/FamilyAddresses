@@ -1,0 +1,60 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "familyaddressesresource",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        },
+        {
+            "name": "/addresses",
+            "lambdaFunction": "manageaddresses",
+            "privacy": {
+                "private": true,
+                "auth": []
+            }
+        }
+    ],
+    "resourceName": "familyaddresses",
+    "apiName": "familyaddresses",
+    "functionArns": [
+        {
+            "lambdaFunction": "familyaddressesresource"
+        },
+        {
+            "lambdaFunction": "manageaddresses"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "familyaddresses-production-20190817103939-authRole",
+        "unAuthRoleName": "familyaddresses-production-20190817103939-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "familyaddressesresource",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "manageaddresses",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

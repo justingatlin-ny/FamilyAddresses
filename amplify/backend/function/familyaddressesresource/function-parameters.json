@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "storage": {
+            "familyaddressesdynamo": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}
