@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import GlobalStyleSheet from "../components/globalstylesheet";
 import Index from "../containers";
 import Update from "../containers/update";
 
-function AppRouter() {
+function Router() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <GlobalStyleSheet />
         <nav>
@@ -23,8 +23,8 @@ function AppRouter() {
         <Route path="/" exact component={Index} />
         <Route path="/update/" component={Update} />
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
-export default AppRouter;
+export default Router;
